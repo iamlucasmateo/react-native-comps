@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
-import { Text, Image, TextInput, TouchableOpacity, View, StyleSheet } from 'react-native';
+import { Text, TextInput, TouchableOpacity, SafeAreaView, StyleSheet } from 'react-native';
 import { withSafeAreaInsets } from 'react-native-safe-area-context';
 
 export class WeatherApp extends Component {
     render() {
         return (
-            <View style={styles.container}>
+            <SafeAreaView style={styles.container}>
                 <Text>Weather App</Text>
                 <TextInput 
                     style={styles.textInput}
                     placeholder="Type here..."
                 />
                 <TouchableOpacity title="fetch"/>
-            </View>
+            </SafeAreaView>
         )
     }
 }
