@@ -1,9 +1,27 @@
 import React, { Component } from 'react';
-import { Button, View, TouchableOpacity, Text, StyleSheet } from 'react-native';
+import { Button, View, TouchableOpacity, Text, StyleSheet, FlatList } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
+import { MenuButton } from './MenuButton';
 
 
 export const ButtonScreen = (props) => {
+    const screens = [
+        {
+            screenName: 'Boiler',
+        },
+        {
+            screenName: 'List',
+        },
+        {
+            screenName: 'BarCodeApp',
+        },
+        {
+            screenName: 'DoubleList',
+        },
+        {
+            screenName: 'Colors',
+        }
+    ]
     return (
         <View style={styles.container}>
             <LinearGradient
@@ -11,25 +29,18 @@ export const ButtonScreen = (props) => {
                 colors={['rgba(0,0,0,0.8)', 'transparent']}
                 style={styles.background}
             >
-            <TouchableOpacity
-                onPress={() => props.navigation.navigate('Boiler')}
-                style={styles.button}
-            >
-                <Text style={styles.buttonText}>Go to Basic Screen</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-                onPress={() => props.navigation.navigate('List')}
-                style={styles.button}
-            >
-                <Text style={styles.buttonText}>Go to List</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-                onPress={() => props.navigation.navigate('WeatherApp')}
-                style={styles.button}
-            >
-                <Text style={styles.buttonText}>Go to WeatherApp</Text>
-            </TouchableOpacity>
-        
+                <FlatList
+                    keyExtractor={item => item.screenName}
+                    data={screens}
+                    renderItem={ ( { item } ) => {
+                        return (
+                            <MenuButton
+                                text={`Go to ${item.screenName}`}
+                                onPressHandler={() => props.navigation.navigate(item.screenName)}
+                            />
+                        )
+                    }}
+                />
             </LinearGradient>
 
         </View>
@@ -40,22 +51,10 @@ const styles = StyleSheet.create({
     container: {
         alignItems: 'center',
     },
-    button: {
-        padding: 5,
-        margin: 5,
-        backgroundColor: 'pink',
-        color: 'green',
-        textAlign: 'center',
-        width: '50%',
-    },
-    buttonText: {
-        textAlign: 'center',
-    },
     background: {
         width: '100%',
         alignItems: 'center',
         paddingTop: 20,
         paddingBottom: 50,
-    },
-    
+    },  
 })

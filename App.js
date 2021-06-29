@@ -6,9 +6,10 @@ import { TodoList } from './src/Components/TodoList';
 import { ListScreen } from './src/Components/ListScreen';
 import { BoilerPlate } from './src/Components/BoilerScreen';
 import { ButtonScreen } from './src/Components/ButtonScreen';
-import { WeatherApp } from './src/Components/WeatherApp';
+import { BarCodeApp } from './src/Components/BarCodeApp';
 import { NavigationScreen } from './src/Components/NavigationScreen';
 import { DoubleList } from './src/Components/DoubleList';
+import { Colors } from './src/Components/Colors';
 
 
 export default function App() {
@@ -19,21 +20,13 @@ export default function App() {
     boiler: <BoilerPlate/>,
     button: <ButtonScreen/>, 
     navigation: <NavigationScreen/>,
-    weather: <WeatherApp/>,
+    barCode: <BarCodeApp/>,
+    colors: <Colors/>
   }
   return (
         renderItem.navigation
   );
 }
-
-{/* <SafeAreaView style={styles.container}>
-<NavigationContainer>
-<Stack.Navigator>
-  <Stack.Screen name="Home" component={ButtonScreen}/>
-</Stack.Navigator>
-</NavigationContainer>
-<StatusBar style="auto"/>
-</SafeAreaView> */}
 
 const styles = StyleSheet.create({
   container: {

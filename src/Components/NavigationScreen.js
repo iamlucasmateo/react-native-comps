@@ -4,8 +4,9 @@ import React, { useState } from 'react';
 import { ListScreen } from './ListScreen';
 import { BoilerPlate } from './BoilerScreen';
 import { ButtonScreen } from './ButtonScreen';
-import { WeatherApp } from './WeatherApp';
+import { BarCodeApp } from './BarCodeApp';
 import { DoubleList } from './DoubleList';
+import { Colors } from './Colors';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -15,7 +16,7 @@ const Stack = createStackNavigator();
 export function NavigationScreen() {
   return (
       <NavigationContainer>
-          <Stack.Navigator initialRouteName='DoubleList'>
+          <Stack.Navigator initialRouteName='Home'>
             <Stack.Screen name="Home" component={ButtonScreen}/>
             <Stack.Screen 
               name="List"  
@@ -28,14 +29,19 @@ export function NavigationScreen() {
               options={{title: 'Basic'}}
             />
             <Stack.Screen 
-              name="WeatherApp"  
-              component={WeatherApp}
-              options={{title: 'Weather'}}
+              name="BarCodeApp"  
+              component={BarCodeApp}
+              options={{title: 'Bar Code'}}
             />
             <Stack.Screen 
               name="DoubleList"  
               component={DoubleList}
               options={{title: 'Double List'}}
+            />
+            <Stack.Screen 
+              name="Colors"  
+              component={Colors}
+              options={{title: 'Colors App'}}
             />
           </Stack.Navigator>
           <StatusBar style="auto"/>

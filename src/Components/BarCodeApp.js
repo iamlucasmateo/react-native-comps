@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Text, TextInput, TouchableOpacity, SafeAreaView, StyleSheet } from 'react-native';
 import { withSafeAreaInsets } from 'react-native-safe-area-context';
 
-export class WeatherApp extends Component {
+export class BarCodeApp extends Component {
     render() {
         return (
             <SafeAreaView style={styles.container}>
