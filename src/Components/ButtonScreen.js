@@ -6,21 +6,13 @@ import { MenuButton } from './MenuButton';
 
 export const ButtonScreen = (props) => {
     const screens = [
-        {
-            screenName: 'Boiler',
-        },
-        {
-            screenName: 'List',
-        },
-        {
-            screenName: 'BarCodeApp',
-        },
-        {
-            screenName: 'DoubleList',
-        },
-        {
-            screenName: 'Colors',
-        }
+        { screenName: 'Boiler', },
+        { screenName: 'List', },
+        { screenName: 'BarCodeApp', },
+        { screenName: 'DoubleList', },
+        { screenName: 'Colors', },
+        { screenName: 'ColorChanger', },
+        { screenName: 'TextInputScreen', },
     ]
     return (
         <View style={styles.container}>
@@ -42,7 +34,6 @@ export const ButtonScreen = (props) => {
                     }}
                 />
             </LinearGradient>
-
         </View>
     )
 }

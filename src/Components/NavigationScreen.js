@@ -7,6 +7,8 @@ import { ButtonScreen } from './ButtonScreen';
 import { BarCodeApp } from './BarCodeApp';
 import { DoubleList } from './DoubleList';
 import { Colors } from './Colors';
+import { ColorChanger } from './ColorChanger';
+import { TextInputScreen } from './TextInputScreen';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -42,6 +44,16 @@ export function NavigationScreen() {
               name="Colors"  
               component={Colors}
               options={{title: 'Colors App'}}
+            />
+            <Stack.Screen 
+              name="ColorChanger"  
+              component={ColorChanger}
+              options={{title: 'Color Changer'}}
+            />
+            <Stack.Screen 
+              name="TextInputScreen"  
+              component={TextInputScreen}
+              options={{title: 'Text Input'}}
             />
           </Stack.Navigator>
           <StatusBar style="auto"/>
